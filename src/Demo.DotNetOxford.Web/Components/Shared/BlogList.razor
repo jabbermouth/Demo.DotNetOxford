@@ -4,8 +4,13 @@
 
 @if (blogRepository.Posts().Any())
 {
-    <div><h2>Blog 1</h2><p>Content for blog 1</p></div>
-    <div><h2>Blog 2</h2><p>Content for blog 2</p></div>
+    foreach(var post in blogRepository.Posts())
+    {
+        <div>
+            <h2>@post.Title</h2>
+            <p>@post.Content</p>
+        </div>
+    }
 }
 else
 {
